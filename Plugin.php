@@ -12,10 +12,11 @@ class Plugin extends Base
             $this->template->hook->attach('template:layout:head', 'gamify:layout/head');
 	    //$this->helper->register('myTask', '\Kanboard\Plugins\Gamify\Helper\TaskHelper'); // ohne .php?
 //	    $this->helper->register('myTask', 'gamify:TaskHelper'); // ohne .php?
-	    $this->template->hook->attach('template:task:form:third-column', 'gamify:gamify/add_task');
-	    $this->hook->on('controller:task:form:default', function (array $default_values) {
-            return empty($default_values['experience']) ? array('experience' => 10) : array();
-        });
+	    //$this->template->hook->attach('template:task:form:third-column', 'gamify:gamify/add_task');
+	    //$this->hook->on('controller:task:form:default', function (array $default_values) {
+            //return empty($default_values['experience']) ? array('experience' => 10) : array();
+        //});
+	    $this->template->hook->attach('template:task:sidebar:actions', 'gamify:gamify/task_sidebar');
 
 
 
