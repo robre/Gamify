@@ -51,6 +51,7 @@ class GamificationController extends BaseController
     public function index()
     {
 	    $task = $this->getTask();
+	    $this->response->html("<html><body>ASD</body></html>");
 	    $this->response->html($this->helper->layout->task('gamify:gamify/add_exp_to_task', array(
 		    'task' => $task,
 		    'values' => array(
