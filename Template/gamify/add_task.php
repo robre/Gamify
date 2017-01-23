@@ -6,6 +6,6 @@ $attributes = array_merge(array('tabindex="1000"'), $attributes);
 	$html .= ' '.t('EXP');
         echo $html;
 
+/*<?= $this->myTask->selectExperience($values, $errors) ?>*/
 
 ?>
-<?= /**$this->myTask->selectExperience($values, $errors)**/ ?>
