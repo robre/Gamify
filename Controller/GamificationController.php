@@ -44,7 +44,6 @@ class GamificationController extends BaseController
 
     public function save()
     {
-	die("save");
         $values = $this->request->getValues();
 	$errors = array();
 	$task = $this->getTask();
@@ -65,7 +64,6 @@ class GamificationController extends BaseController
     }
     public function get()
     {
-	die("get");
 	$task = $this->getTask();
 	$asd = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', '10');
     	$this->response->html($asd);
