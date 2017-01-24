@@ -26,14 +26,8 @@ class Plugin extends Base
 		    //
 		    //
 		    //
-		$project_id = $this->request->getIntegerParam('project_id');
-		$task = $this->taskFinderModel->getDetails($this->request->getIntegerParam('task_id'));
-		if (empty($task)) {
-			die("no task");
-		}
-		if ($project_id !== 0 && $project_id != $task['project_id']) {
-			die("no access");
-		}
+		$task_id = $this->request->getIntegerParam('task_id');
+		$user = $this->getUser;
 
 
 
@@ -43,7 +37,8 @@ class Plugin extends Base
 		//echo var_dump($container);
 		echo "-xxx-\n";
 		echo var_dump($values);
-		echo var_dump($task);
+		echo var_dump($task_id);
+		echo var_dump($user);
 		echo "--------------";
 		echo "--------------2";
 		//echo var_dump($container->getTaskId());
