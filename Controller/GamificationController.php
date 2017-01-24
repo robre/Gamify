@@ -73,6 +73,7 @@ class GamificationController extends BaseController
 
     public function getuser()
     {
+	    gc_enable();
 
 	//$user = $this->getUser();
 	$asd = $this->userMetadataModel->get($this->getUser()['id'], 'gamifyExperience', '0');
