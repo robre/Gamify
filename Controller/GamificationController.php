@@ -78,13 +78,13 @@ class GamificationController extends BaseController
         $user = $this->userModel->getById($user_id);
 	$asd = $this->userMetadataModel->get($user_id, 'gamifyExperience', '0');
 	$this->response->html($this->helper->layout->user('gamify:gamify/userview', array(
-		'user' = $user,
-		'values' = array(
-		'user_id' = $user_id,
-		'exp' = $asd,
-		'plugin' = 'gamify',
-		'controller' = 'GamificationController',
-		'action' = 'getuser',
+		'user' => $user,
+		'values' => array(
+		'user_id' => $user_id,
+		'exp' => $asd,
+		'plugin' => 'gamify',
+		'controller' => 'GamificationController',
+		'action' => 'getuser',
 	),
 	)));
     
