@@ -31,10 +31,10 @@ class Plugin extends Base
 		$user = $this->userModel->getByUsername($task['assignee_username']);
 		$user_id = $user['id'];
 		
-		$txp = $this->model->taskMetadataModel->get($task_id, 'gamifyExperience', '10');
-		$uxp = $this->model->userMetadataModel->get($user_id, 'gamifyExperience', '0');
+		$txp = $this->taskMetadataModel->get($task_id, 'gamifyExperience', '10');
+		$uxp = $this->userMetadataModel->get($user_id, 'gamifyExperience', '0');
 		$sum = intval($txp) + intval($uxp);
-		$x = $this->model->userMetadataModel->save($user_id, array('gamifyExperience' => $sum));
+		$x = $this->userMetadataModel->save($user_id, array('gamifyExperience' => $sum));
 		return $x;
 
 
