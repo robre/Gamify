@@ -4,7 +4,7 @@ namespace Kanboard\Plugin\Gamify;
 
 use Kanboard\Core\Plugin\Base;
 
-use Kanboard\Plugin\Gamify\Action\TaskCloseExperience;
+//use Kanboard\Plugin\Gamify\Action\TaskCloseExperience;
 class Plugin extends Base
 {
         public function initialize()
@@ -22,13 +22,10 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
 	    $this->on('task.close', function($e, $container){
 	   	//error_log(var_dump($container));
-		$t = $this->getTask();
-		$u = $this->getUser();
 		echo "<pre>";
 		//echo var_dump($container);
-		echo $t;
 		echo "-xxx-\n";
-		echo $u;
+		echo var_dump($this);
 		echo "--------------";
 		echo "--------------2";
 		//echo var_dump($container->getTaskId());
