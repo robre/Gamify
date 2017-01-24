@@ -70,5 +70,14 @@ class GamificationController extends BaseController
     	$this->response->html($asd);
     
     }
+
+    public function getuser()
+    {
+
+	$task = $this->getUser();
+	$asd = $this->userMetadataModel->get($user['id'], 'gamifyExperience', '0');
+    	$this->response->html($asd);
+    
+    }
     
 }
