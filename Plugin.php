@@ -19,7 +19,13 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:task:sidebar:actions', 'gamify:gamify/task_sidebar');
 	    $this->template->hook->attach('template:task:details:first-column', 'gamify:gamify/task_details');
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
-
+	    $this->on('TaskModel::EVENT_CLOSE', function($container){
+	   	echo var_dump($container); 
+	    
+	    
+	    
+	    });
+           
 
 
             //$this->template->setTemplateOverride('board/table_tasks', 'questlog:questlog/table_tasks');
