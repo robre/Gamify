@@ -27,7 +27,7 @@ class Plugin extends Base
 		    //
 		    //
 		$task_id = $this->request->getIntegerParam('task_id');
-		$user = $this->getUser;
+		$user = $this->getUser();
 
 
 
