@@ -47,21 +47,19 @@ class GamificationController extends BaseController
         $values = $this->request->getValues();
 	$errors = array();
 	$task = $this->getTask();
-	echo var_dump($values);
-	echo var_dump($task);
 	$x = $this->taskMetadataModel->save($task['id'], array('gamifyExperience' => $values['exp']));
-	$asd = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', 'nope');
 	echo $asd;
 	return $this->index($values, $errors);
     }
     public function index()
     {
 	    $task = $this->getTask();
+	    $vall = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', '10');
 	    $this->response->html($this->helper->layout->task('gamify:gamify/add_exp_to_task', array(
 		    'task' => $task,
 		    'project' => $this->projectModel->getById($task['project_id']),
 		    'values' => array(
-			    'exp' => 10,
+			    'exp' => $vall,
 		    ),
 	    )));
     }
@@ -69,8 +67,7 @@ class GamificationController extends BaseController
     {
 
 	$task = $this->getTask();
-	echo $task['id'];
-	$asd = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', 'nope');
+	$asd = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', '10');
     	$this->response->html($asd);
     
     }

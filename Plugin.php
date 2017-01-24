@@ -17,6 +17,7 @@ class Plugin extends Base
             //return empty($default_values['experience']) ? array('experience' => 10) : array();
         //});
 	    $this->template->hook->attach('template:task:sidebar:actions', 'gamify:gamify/task_sidebar');
+	    $this->template->hook->attach('template:task:details:first-column', 'gamify:gamify/task_details');
 
 
 
