@@ -20,13 +20,14 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:task:sidebar:actions', 'gamify:gamify/task_sidebar');
 	    $this->template->hook->attach('template:task:details:first-column', 'gamify:gamify/task_details');
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
-	    $this->on('task.close', function($container){
+	    $this->on('task.close', function(Event $e, $container){
 	   	//error_log(var_dump($container));
 		echo "<pre>";
-		//echo var_dump($container);
+		echo var_dump($e);
+		echo var_dump($container);
 		echo "--------------";
 		echo "--------------2";
-		echo var_dump($container->getTaskId());
+		//echo var_dump($container->getTaskId());
 		echo "</pre>";
 		die("ok");
 	    });
