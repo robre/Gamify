@@ -25,7 +25,7 @@ class Plugin extends Base
 	   	error_log(var_dump($container));
 	    });
 
-	    $this->actionManager->register(new TaskCloseExperience($this->container));	    
+	    //$this->actionManager->register(new TaskCloseExperience($this->container));	    
 	    
 	    
            
