@@ -25,7 +25,6 @@ class Plugin extends Base
 	    });
 
 	    $this->actionManager->register(new TaskCloseExperience($this->container));	    
-	    die("asd3");
 	    
 	    
            
