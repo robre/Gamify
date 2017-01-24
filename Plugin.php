@@ -23,11 +23,9 @@ class Plugin extends Base
 	    $this->on('task.close', function($e, $container){
 	   	//error_log(var_dump($container));
 		$values = $this->request->getValues();
-		$task = $this->getTask();
 		echo "<pre>";
 		//echo var_dump($container);
 		echo "-xxx-\n";
-		echo var_dump($task);
 		echo var_dump($values);
 		echo "--------------";
 		echo "--------------2";
