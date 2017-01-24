@@ -3,6 +3,7 @@
 namespace Kanboard\Plugin\Gamify;
 
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Controller\BaseController;
 
 //use Kanboard\Plugin\Gamify\Action\TaskCloseExperience;
 class Plugin extends Base
@@ -23,10 +24,12 @@ class Plugin extends Base
 	    $this->on('task.close', function($e, $container){
 	   	//error_log(var_dump($container));
 		$values = $this->request->getValues();
+		$task = $this->getTask();
 		echo "<pre>";
 		//echo var_dump($container);
 		echo "-xxx-\n";
 		echo var_dump($values);
+		echo var_dump($task);
 		echo "--------------";
 		echo "--------------2";
 		//echo var_dump($container->getTaskId());
