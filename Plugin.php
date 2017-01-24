@@ -23,8 +23,22 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
 	    $this->on('task.close', function($e, $container){
 	   	//error_log(var_dump($container));
+		    //
+		    //
+		    //
+		$project_id = $this->request->getIntegerParam('project_id');
+		$task = $this->taskFinderModel->getDetails($this->request->getIntegerParam('task_id'));
+		if (empty($task)) {
+			die("no task")
+		}
+		if ($project_id !== 0 && $project_id != $task['project_id']) {
+			die("no access");
+		}
+
+
+
+
 		$values = $this->request->getValues();
-		$task = $this->getTask();
 		echo "<pre>";
 		//echo var_dump($container);
 		echo "-xxx-\n";
@@ -35,6 +49,8 @@ class Plugin extends Base
 		//echo var_dump($container->getTaskId());
 		echo "</pre>";
 		die("ok");
+
+
 	    });
 
 	    //$this->actionManager->register(new TaskCloseExperience($this->container));	    
