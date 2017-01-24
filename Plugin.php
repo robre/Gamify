@@ -21,7 +21,7 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:task:sidebar:actions', 'gamify:gamify/task_sidebar');
 	    $this->template->hook->attach('template:task:details:first-column', 'gamify:gamify/task_details');
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
-	    $this->on('task.close', function($e, $container){
+	    $this->on('task.close', function($container){
 	   	//error_log(var_dump($container));
 		    //
 		    //
@@ -30,10 +30,16 @@ class Plugin extends Base
 		$task = $this->taskFinderModel->getDetails($task_id);
 		$user = $this->userModel->getByUsername($task['assignee_username']);
 		$user_id = $user['id'];
+		
+		$txp = $this->model->taskMetadataModel->get($task_id, 'gamifyExperience', '10');
+		$uxp = $this->model->userMetadataModel->get($user_id, 'gamifyExperience', '0');
+		$sum = intval($txp) + intval($uxp);
+		$x = $this->model->userMetadataModel->save($user_id, array('gamifyExperience' => $sum));
+		return $x;
 
 
 
-
+/*
 		echo "<pre>";
 		//echo var_dump($container);
 		echo "-xxx-\n";
@@ -43,7 +49,7 @@ class Plugin extends Base
 		echo "--------------2";
 		//echo var_dump($container->getTaskId());
 		echo "</pre>";
-		die("ok");
+		die("ok");*/
 
 
 	    });
