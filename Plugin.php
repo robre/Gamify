@@ -21,8 +21,11 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:task:details:first-column', 'gamify:gamify/task_details');
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
 	    $this->on('task.close', function($container){
-	   	error_log(var_dump($container));
-		die("<pre>" . var_dump($container) . "</pre>");
+	   	//error_log(var_dump($container));
+		echo "<pre>";
+		echo var_dump($container);
+		echo "</pre>";
+		die("ok");
 	    });
 
 	    //$this->actionManager->register(new TaskCloseExperience($this->container));	    
