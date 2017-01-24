@@ -67,8 +67,10 @@ class GamificationController extends BaseController
     }
     public function get()
     {
-	$asd = $this->taskMetadataModel->get($this->getTask(), 'gamifyExperience', '10');
-	$asd .= var_dump($this->taskMetadataModel->getAll($this->getTask()));
+
+	$task = $this->getTask();
+	echo $task['id'];
+	$asd = $this->taskMetadataModel->get($task['id'], 'gamifyExperience', 'nope');
     	$this->response->html($asd);
     
     }
