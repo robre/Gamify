@@ -28,6 +28,8 @@ class Plugin extends Base
 		    //
 		$task_id = $this->request->getIntegerParam('task_id');
 		$task = $this->taskFinderModel->getDetails($task_id);
+		$user = $this->userModel->getByUsername($task['assignee_username']);
+		$user_id = $user['id'];
 
 
 
