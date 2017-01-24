@@ -27,17 +27,15 @@ class Plugin extends Base
 		    //
 		    //
 		$task_id = $this->request->getIntegerParam('task_id');
-		$user = $this->getUser();
+		$task = $this->taskFinderModel->getDetails($task_id);
 
 
 
 
-		$values = $this->request->getValues();
 		echo "<pre>";
 		//echo var_dump($container);
 		echo "-xxx-\n";
-		echo var_dump($values);
-		echo var_dump($task_id);
+		echo var_dump($task);
 		echo var_dump($user);
 		echo "--------------";
 		echo "--------------2";
