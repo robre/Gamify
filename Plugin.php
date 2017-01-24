@@ -25,7 +25,6 @@ class Plugin extends Base
 		echo "<pre>";
 		echo var_dump($container);
 		echo "--------------";
-		echo var_dump($container['task']);
 		echo "--------------2";
 		echo var_dump($container->values);
 		echo "</pre>";
