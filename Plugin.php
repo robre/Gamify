@@ -24,7 +24,6 @@ class Plugin extends Base
 	   	error_log(var_dump($container));
 	    });
 
-	    die("asd2");
 	    $this->actionManager->register(new TaskCloseExperience($this->container));	    
 	    die("asd3");
 	    
