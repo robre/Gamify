@@ -23,10 +23,10 @@ class Plugin extends Base
 	    $this->on('task.close', function($container){
 	   	//error_log(var_dump($container));
 		echo "<pre>";
-		echo var_dump($container);
+		//echo var_dump($container);
 		echo "--------------";
 		echo "--------------2";
-		echo var_dump($container->values);
+		echo var_dump($container->getTaskId());
 		echo "</pre>";
 		die("ok");
 	    });
