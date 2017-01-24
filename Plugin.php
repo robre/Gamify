@@ -21,7 +21,7 @@ class Plugin extends Base
 	    $this->template->hook->attach('template:board:task:icons', 'gamify:gamify/small_task_xp');
 	    $this->on('TaskModel::EVENT_CLOSE', function($container){
 	   	error_log(var_dump($container));
-	    
+	    $this->actionManager->register(new TaskCloseExperience($this->container));	    
 	    
 	    
 	    });
