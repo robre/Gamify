@@ -53,6 +53,7 @@ class GamificationController extends BaseController
 	    $task = $this->getTask();
 	    $this->response->html($this->helper->layout->task('gamify:gamify/add_exp_to_task', array(
 		    'task' => $task,
+		    'project' => $this->projectModel->getById($task['project_id']),
 		    'values' => array(
 			    'exp' => 10,
 		    ),
