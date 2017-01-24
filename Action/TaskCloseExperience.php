@@ -28,6 +28,7 @@ class TaskCloseExperience extends Base
      */
     public function getCompatibleEvents()
     {
+	die("getevents");
         return array(
             TaskModel::EVENT_CLOSE,
         );
@@ -40,6 +41,7 @@ class TaskCloseExperience extends Base
      */
     public function getActionRequiredParameters()
     {
+	    die("getActionPArams");
         return array(
 		'task_id' => t('task_id'),
 		'user_id' => t('user_id'),
@@ -53,6 +55,7 @@ class TaskCloseExperience extends Base
      */
     public function getEventRequiredParameters()
     {
+	    die("getEventParams");
         return array(
             'task_id',
         );
@@ -66,6 +69,7 @@ class TaskCloseExperience extends Base
      */
     public function doAction(array $data)
     {
+	    die("doAction");
 	$txp = $this->model->taskMetadataModel->get($data['task_id'], 'gamifyExperience', '10');	
 	$uxp = $this->model->userMetadataModel->get($data['user_id'], 'gamifyExperience', '0');
 	$sum = intval($txp) + intval($uxp);
@@ -81,6 +85,7 @@ class TaskCloseExperience extends Base
      */
     public function hasRequiredCondition(array $data)
     {
+	    die("hasAction");
         return true;
     }
 }
