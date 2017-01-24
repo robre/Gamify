@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\Gamify;
 
 use Kanboard\Core\Plugin\Base;
 
+use Kanboard\Plugin\Gamify\Action\TaskCloseExperience;
 class Plugin extends Base
 {
         public function initialize()
