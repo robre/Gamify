@@ -48,6 +48,7 @@ class GamificationController extends BaseController
 
 	$task = $this->getTask();
 	echo var_dump($values);
+	echo var_dump($task);
 	$this->taskMetadataModel->save($task['id'], ['gamifyExperience' => $values['exp']]);
 	return $this->index($values, $errors);
     }
