@@ -29,7 +29,7 @@ class Plugin extends Base
 		$project_id = $this->request->getIntegerParam('project_id');
 		$task = $this->taskFinderModel->getDetails($this->request->getIntegerParam('task_id'));
 		if (empty($task)) {
-			die("no task")
+			die("no task");
 		}
 		if ($project_id !== 0 && $project_id != $task['project_id']) {
 			die("no access");
