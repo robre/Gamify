@@ -53,8 +53,8 @@ class GamificationController extends BaseController
 	$y = false;
 	$z = true;
 	echo "---";
-	//echo $y;
-	echo $z;
+	echo $y;
+	//echo $z;
 	echo $x;
 	return $this->index($values, $errors);
     }
